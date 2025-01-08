@@ -1,9 +1,10 @@
 // スライダーに表示する画像のパス
 var imgList = [
-	"images/",
-	"images/img02.jpg",
-	"images/img03.jpg",
-	"images/img04.jpg"
+	"images/downloa.jpg",
+	"images/p.jpg",
+	"images/imags.jpg",
+	"images/im.jpg",
+	"images/imges.jpg",
 ];
 
 // 画像とナビの要素を自動で追加
@@ -68,11 +69,11 @@ for(var i = 0; i < dotNavigation.length; i++) {
 		sliderSlide(index);
 	}, false);
 }
-
 function addImage(imagePath) {
     imgList.push(imagePath); // 画像パスを配列に追加
     renderSlider();         // スライダーを再レンダリング
 }
+
 
 function renderSlider() {
     const sliderInner = document.getElementsByClassName("slider-inner")[0];
@@ -123,3 +124,8 @@ function initSlider() {
 }
 
 addImage("images/img05.jpg");
+// 6枚目の画像（インデックス5）を削除
+imgList.splice(5, 1);  // 5番目のインデックス（6枚目の画像）を削除
+
+// スライダーを再レンダリング
+renderSlider();
